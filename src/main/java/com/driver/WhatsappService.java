@@ -1,9 +1,10 @@
 package com.driver;
-
+import org.springframework.stereotype.Service;
+import java.util.Date;
 import java.util.List;
 
+@Service
 public class WhatsappService {
-
     WhatsappRepository whatsappRepository = new WhatsappRepository() ;
     public boolean isNewUser(String mobile) {
         return whatsappRepository.isNewUser(mobile);
@@ -29,5 +30,5 @@ public class WhatsappService {
     public String changeAdmin(User approver, User user, Group group) throws Exception {
         return whatsappRepository.changeAdmin(approver, user, group);
     }
-
 }
+
